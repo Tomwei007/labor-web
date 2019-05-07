@@ -1,0 +1,126 @@
+@import "../../assets/css/public.less";
+.main {
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+    height: 60px;
+    color: #fff;
+    background-color: @theme-color;
+
+    &-title {
+      margin: 0 40px;
+      float: left;
+      font-size: 18px;
+      font-weight: bold;
+      height: 60px;
+      line-height: 60px;
+
+      i {
+        display: none;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+
+    &-menu {
+      float: left;
+      padding-left: 60px;
+    }
+
+    &-con {
+      padding-right: 40px;
+      float: right;
+
+      .con-user {
+        color: #fff;
+
+        i.el-icon-s-custom {
+          font-size: 24px;
+        }
+
+        span {
+          padding: 0 5px;
+          font-size: 14px;
+        }
+
+        i.el-icon-caret-bottom {
+          font-size: 12px;
+        }
+      }
+    }
+    &-con > div {
+      height: 60px;
+      line-height: 40px;
+      padding: 10px;
+      float: left;
+      color: #c6c6ff;
+      cursor: pointer;
+      i {
+        font-size: 18px;
+      }
+    }
+    &-con > div:hover {
+      color: #fff;
+    }
+  }
+  &-inner {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    .main-content {
+      background-color: #fff;
+      min-height: calc(100% - 40px);
+    }
+    .main-breadcrumb {
+      margin-bottom: 20px;
+    }
+  }
+
+  .aside-menu {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    bottom: 0;
+    z-index: 2;
+    width: 240px;
+    border-right: 1px solid #e6e6e6;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .main .header-menu {
+    display: none;
+  }
+  .main .header-title i {
+    display: inline;
+  }
+}
+@media screen and (min-width: 1190px) {
+  .main .aside-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 510px) {
+  .main .header-con {
+    display: none;
+  }
+}
+
+/*定义过渡状态*/
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(-240px);
+}
